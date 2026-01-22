@@ -303,7 +303,9 @@ void CInput::MouseModeRelative()
 		//fix-linux-rdp-mouse-issue-3198
 
 		SDL_SetRelativeMouseMode(SDL_FALSE);
+		//Setting it To 0,0 just avoid overlap on opening.
 		SDL_GetRelativeMouseState(&x,&y);
+		//Global State just reduce the cpu usage.
 		SDL_GetGlobalMouseState(&x,&y);
 
 	}
